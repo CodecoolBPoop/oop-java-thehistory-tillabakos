@@ -2,6 +2,7 @@ package com.codecool.thehistory;
 
 import java.util.*;
 
+
 public class TheHistoryLinkedList implements TheHistory {
     /**
      * This implementation should use a String LinkedList so don't change that!
@@ -12,14 +13,16 @@ public class TheHistoryLinkedList implements TheHistory {
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
         String [] wordArray = text.split("\\s");
-        //wordsLinkedList = Arrays.asList(wordArray);
-        Collections.addAll(wordsLinkedList, wordArray);
+        wordsLinkedList = Arrays.asList(wordArray);
+        //Collections.addAll(wordsLinkedList, wordArray);
     }
 
 
     @Override
     public void removeWord(String wordToBeRemoved) {
         //TODO: check the TheHistory interface for more information
+        //wordsLinkedList.removeIf(s -> s.equals(wordToBeRemoved));
+        wordsLinkedList.removeIf(wordToBeRemoved::equals);
     }
 
     @Override
