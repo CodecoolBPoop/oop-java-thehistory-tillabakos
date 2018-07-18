@@ -12,7 +12,7 @@ public class TheHistoryArrayList implements TheHistory {
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
         String [] wordArray = text.split("\\s");
-        List<String> wordsList = Arrays.asList(wordArray);
+        Collections.addAll(wordsArrayList, wordArray );
     }
 
     @Override
@@ -23,7 +23,7 @@ public class TheHistoryArrayList implements TheHistory {
     @Override
     public int size() {
         //TODO: check the TheHistory interface for more information
-        return 0;
+        return wordsArrayList.size();
     }
 
     @Override
