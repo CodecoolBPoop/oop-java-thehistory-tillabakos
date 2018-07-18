@@ -12,7 +12,8 @@ public class TheHistoryLinkedList implements TheHistory {
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
         String [] wordArray = text.split("\\s");
-        wordsLinkedList = Arrays.asList(wordArray);
+        //wordsLinkedList = Arrays.asList(wordArray);
+        Collections.addAll(wordsLinkedList, wordArray);
     }
 
 
