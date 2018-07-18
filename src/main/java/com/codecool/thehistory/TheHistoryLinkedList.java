@@ -1,9 +1,6 @@
 package com.codecool.thehistory;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class TheHistoryLinkedList implements TheHistory {
     /**
@@ -14,7 +11,10 @@ public class TheHistoryLinkedList implements TheHistory {
     @Override
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
+        String [] wordArray = text.split("\\s");
+        wordsLinkedList = Arrays.asList(wordArray);
     }
+
 
     @Override
     public void removeWord(String wordToBeRemoved) {
