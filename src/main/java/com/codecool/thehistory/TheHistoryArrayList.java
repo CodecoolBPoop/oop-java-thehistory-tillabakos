@@ -13,6 +13,7 @@ public class TheHistoryArrayList implements TheHistory {
         //TODO: check the TheHistory interface for more information
         String [] wordArray = text.split("\\s");
         Collections.addAll(wordsArrayList, wordArray );
+        //wordsArrayList.addAll(Arrays.asList(text.split("\\s")));
     }
 
     @Override

@@ -18,15 +18,15 @@ public class TheHistoryArray implements TheHistory {
     @Override
     public void removeWord(String wordToBeRemoved) {
         //TODO: check the TheHistory interface for more information
-        String [] newwordArray = new String [size()];
+        String [] newWordArray = new String [size()];
         int index = 0;
         for (int i = 0; i < wordsArray.length; i++) {
             if (wordsArray[i] != wordToBeRemoved) {
-                newwordArray[index] = wordsArray[i];
+                newWordArray[index] = wordsArray[i];
                 index++;
             }
         }
-        wordsArray = newwordArray;
+        wordsArray = newWordArray;
     }
 
     @Override
@@ -43,6 +43,11 @@ public class TheHistoryArray implements TheHistory {
     @Override
     public void replaceOneWord(String from, String to) {
         //TODO: check the TheHistory interface for more information
+        for (String word: wordsArray) {
+            if (word == from) {
+                word = to;
+            }
+        }
     }
 
     @Override

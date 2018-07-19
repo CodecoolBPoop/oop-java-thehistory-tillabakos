@@ -12,10 +12,10 @@ public class TheHistoryLinkedList implements TheHistory {
     @Override
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
-        String [] wordArray = text.split("\\s");
-        wordsLinkedList = Arrays.asList(wordArray);
-        //Collections.addAll(wordsLinkedList, wordArray);
-    }
+        /*String [] wordArray = text.split("\\s");
+        Collections.addAll(wordsLinkedList, wordArray);*/
+        wordsLinkedList.addAll(Arrays.asList(text.split("\\s")));
+        }
 
 
     @Override
