@@ -45,31 +45,36 @@ public class TheHistoryLinkedList implements TheHistory {
 
     @Override
     public void replaceMoreWords(String[] fromWords, String[] toWords) {
-        List<String> newWordsList = new LinkedList<>();
+        List<String> tempWordsList = new LinkedList<>();
         for (ListIterator<String> iter = wordsLinkedList.listIterator(); iter.hasNext();) {
             String currentItem = iter.next();
             int lastIndex = wordsLinkedList.size() - 1;
-            int lastIndexToCheck = iter.previousIndex() + fromWords.length;
+            int lastIndexToCheck = iter.previousIndex() + fromWords.length-1;
+
             boolean notOutOfRange = currentItem.equals(fromWords[0]) && lastIndexToCheck <= lastIndex;
-            boolean replaceWorld = true;
+            boolean nextMatches = true;
+
             if (notOutOfRange) {
                 for (int i = 1; i < fromWords.length; i++) {
                     String fromWord = iter.next();
                     if (!(fromWord.equals(fromWords[i]))) {
-                        replaceWorld = false;
-                        for (int j = 0; j < i; j++)
+                        nextMatches = false;
+                        for (int j = 0; j < i; j++) {
                             iter.previous();
+                        }
                         break;
                     }
                 }
-                if (replaceWorld) {
-                    newWordsList.addAll(Arrays.asList(toWords));
+                if (nextMatches) {
+                    tempWordsList.addAll(Arrays.asList(toWords));
                 } else {
-                    newWordsList.add(currentItem);
+                    tempWordsList.add(currentItem);
                 }
+            } else {
+                tempWordsList.add(currentItem);
             }
         }
-        wordsLinkedList = newWordsList;
+        wordsLinkedList = tempWordsList;
     }
 
     @Override

@@ -62,7 +62,7 @@ public class TheHistoryArray implements TheHistory {
 
       }
     }
-    System.out.println(countFromFirst);
+    //System.out.println(countFromFirst);
 
   }
 
