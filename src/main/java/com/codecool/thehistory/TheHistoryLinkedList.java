@@ -49,7 +49,7 @@ public class TheHistoryLinkedList implements TheHistory {
         for (ListIterator<String> iter = wordsLinkedList.listIterator(); iter.hasNext();) {
             String currentItem = iter.next();
             int lastIndex = wordsLinkedList.size() - 1;
-            int lastIndexToCheck = iter.previousIndex() + fromWords.length-1;
+            int lastIndexToCheck = iter.previousIndex() + fromWords.length -1;
 
             boolean notOutOfRange = currentItem.equals(fromWords[0]) && lastIndexToCheck <= lastIndex;
             boolean nextMatches = true;
